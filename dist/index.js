@@ -12,21 +12,13 @@ try {
   const filePath = core.getInput("filePath");
   const secretName = core.getInput("secretName");
 
-  const content = readSecretContent(secretName);
-  replaceContent(filePath, content);
+  const content = process.env[secretName];
+  fs.writeFileSync(filePath, content, { encoding: "utf8", flag: "w" });
 
   console.log(`Filled secret content into: ${filePath}`);
 } catch (error) {
   core.setFailed(error.message);
 }
-
-const readSecretContent = (secretName) => {
-  return process.env[secretName];
-};
-
-const replaceContent = (filePath, content) => {
-  fs.writeFileSync(filePath, content, { encoding: "utf8", flag: "w" });
-};
 
 
 /***/ }),
