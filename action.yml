@@ -1,0 +1,11 @@
+name: "Secret Replace"
+description: "Replace content in a file with a Github Secret"
+inputs:
+  filePath:
+    description: "Path to file"
+    required: true
+  secretName:
+    description: "The secret file which will replace existing file content"
+runs:
+  using: "node12"
+  main: "dist/index.js"
