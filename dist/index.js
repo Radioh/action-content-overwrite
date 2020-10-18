@@ -14,7 +14,7 @@ try {
 
   fs.writeFileSync(filePath, content, { encoding: "utf8", flag: "w" });
 
-  console.log(`Filled secret content into: ${filePath}`);
+  console.log(`Filled content into: ${filePath}`);
 } catch (error) {
   core.setFailed(error.message);
 }
