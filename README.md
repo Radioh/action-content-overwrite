@@ -1,1 +1,22 @@
-# Action-Content-Overwrite
+![License](https://img.shields.io/github/license/Radioh/action-content-overwrite)
+
+# Content overwrite
+
+This Github action will overwrite a file with defined content.
+It is useful during CI process when you need to replace content in a config file or other files.
+Content could be stored as a Github Secret.
+
+# Usage
+
+Example using content from a Github secret to overwrite content in test.txt
+
+```yaml
+uses: Radioh/action-content-overwrite@v1
+with:
+  filePath: "./src/test.txt"
+  content: ${{ secrets.TEST }}
+```
+
+# License
+
+The scripts and documentation in this project are released under the [MIT License](LICENSE)
