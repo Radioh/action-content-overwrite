@@ -1,5 +1,5 @@
 {
-  "name": "",
+  "name": "action-content-overwrite",
   "version": "1.0.0",
   "description": "A github action for overwriting content in a predefined file. Useful for overwriting config and other files with content defined in a Github secret.",
   "main": "index.js",
