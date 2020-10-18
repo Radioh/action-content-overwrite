@@ -1,14 +1,14 @@
 {
-  "name": "action-secret-replace",
+  "name": "",
   "version": "1.0.0",
-  "description": "A github action for replacing a file in source with content defined in a Github Secret. Useful for replacing a template config file with real values when deploying into an environment.",
+  "description": "A github action for overwriting content in a predefined file. Useful for overwriting config and other files with content defined in a Github secret.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Radioh/action-secret-replace.git"
+    "url": "git+https://github.com/Radioh/action-content-overwrite.git"
   },
   "keywords": [
     "github",
@@ -19,9 +19,9 @@
   "author": "Jeppe Ærenlund",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Radioh/action-secret-replace/issues"
+    "url": "https://github.com/Radioh/action-content-overwrite/issues"
   },
-  "homepage": "https://github.com/Radioh/action-secret-replace#readme",
+  "homepage": "https://github.com/Radioh/action-content-overwrite#readme",
   "dependencies": {
     "@actions/core": "^1.2.6"
   }

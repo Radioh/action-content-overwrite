@@ -10,9 +10,8 @@ const fs = __webpack_require__(747);
 
 try {
   const filePath = core.getInput("filePath");
-  const secretName = core.getInput("secretName");
+  const content = core.getInput("content");
 
-  const content = process.env[secretName];
   fs.writeFileSync(filePath, content, { encoding: "utf8", flag: "w" });
 
   console.log(`Filled secret content into: ${filePath}`);
