@@ -3,7 +3,7 @@
 # Content overwrite
 
 This Github action will overwrite a file with defined content.
-It is useful during CI process when you need to replace content in a config file or other files.
+It is useful during CI process when you need to replace all content in a config file or all content in other files.
 Content could be stored as a Github Secret.
 
 # Usage
