@@ -1,11 +1,11 @@
 {
   "name": "action-content-overwrite",
-  "version": "1.1.0",
+  "version": "2.0.0",
   "description": "A github action for overwriting content in a predefined file. Useful for overwriting config and other files with content defined in a Github secret.",
   "main": "index.js",
   "scripts": {
     "package": "npx ncc build src/index.js -o dist --source-map --license licenses.txt",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -29,6 +29,7 @@
     "@actions/core": "^1.11.1"
   },
   "devDependencies": {
-    "@vercel/ncc": "^0.38.2"
+    "@vercel/ncc": "^0.38.2",
+    "jest": "^29.7.0"
   }
 }

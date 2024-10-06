@@ -1,13 +1,20 @@
 const core = require("@actions/core");
-const fs = require("fs");
+const fs = require("fs").promises;
 
-try {
-  const filePath = core.getInput("filePath");
-  const content = core.getInput("content");
+async function run() {
+  try {
+    const filePath = core.getInput("filePath", { required: true });
+    const content = core.getInput("content", { required: true });
 
-  fs.writeFileSync(filePath, content, { encoding: "utf8", flag: "w" });
+    if (!filePath || !content) {
+      throw new Error("filePath and content inputs are required");
+    }
 
-  console.log(`Filled content into: ${filePath}`);
-} catch (error) {
-  core.setFailed(error.message);
+    await fs.writeFile(filePath, content, { encoding: "utf8", flag: "w" });
+    console.log(`Filled content into: ${filePath}`);
+  } catch (error) {
+    core.setFailed(error.message);
+  }
 }
+
+run();

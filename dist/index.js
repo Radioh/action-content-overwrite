@@ -27540,18 +27540,25 @@ module.exports = parseParams
 /************************************************************************/
 var __webpack_exports__ = {};
 const core = __nccwpck_require__(7484);
-const fs = __nccwpck_require__(9896);
+const fs = (__nccwpck_require__(9896).promises);
 
-try {
-  const filePath = core.getInput("filePath");
-  const content = core.getInput("content");
+async function run() {
+  try {
+    const filePath = core.getInput("filePath", { required: true });
+    const content = core.getInput("content", { required: true });
 
-  fs.writeFileSync(filePath, content, { encoding: "utf8", flag: "w" });
+    if (!filePath || !content) {
+      throw new Error("filePath and content inputs are required");
+    }
 
-  console.log(`Filled content into: ${filePath}`);
-} catch (error) {
-  core.setFailed(error.message);
+    await fs.writeFile(filePath, content, { encoding: "utf8", flag: "w" });
+    console.log(`Filled content into: ${filePath}`);
+  } catch (error) {
+    core.setFailed(error.message);
+  }
 }
+
+run();
 
 module.exports = __webpack_exports__;
 /******/ })()
