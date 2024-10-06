@@ -4,6 +4,7 @@
   "description": "A github action for overwriting content in a predefined file. Useful for overwriting config and other files with content defined in a Github secret.",
   "main": "index.js",
   "scripts": {
+    "package": "npx ncc build src/index.js -o dist --source-map --license licenses.txt",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -26,5 +27,8 @@
   "homepage": "https://github.com/Radioh/action-content-overwrite#readme",
   "dependencies": {
     "@actions/core": "^1.11.1"
+  },
+  "devDependencies": {
+    "@vercel/ncc": "^0.38.2"
   }
 }
