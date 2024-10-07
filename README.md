@@ -1,4 +1,4 @@
-![License](https://img.shields.io/github/license/Radioh/action-content-overwrite) ![Content Overwrite Actions Status](https://github.com/Radioh/action-content-overwrite/workflows/Build/badge.svg) ![Code coverage](/badges/coverage.svg)
+![License](https://img.shields.io/github/license/Radioh/action-content-overwrite) ![Code coverage](/badges/coverage.svg)
 
 # Content overwrite
 
