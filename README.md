@@ -11,7 +11,7 @@ Content could be stored as a Github Secret.
 Example using content from a Github secret to overwrite content in test.txt
 
 ```yaml
-uses: Radioh/action-content-overwrite@v1
+uses: Radioh/action-content-overwrite@v2
 with:
   filePath: "./src/test.txt"
   content: ${{ secrets.TEST }}
