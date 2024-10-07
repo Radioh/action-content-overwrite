@@ -1,10 +1,15 @@
-![License](https://img.shields.io/github/license/Radioh/action-content-overwrite) ![Content Overwrite Actions Status](https://github.com/Radioh/action-content-overwrite/workflows/Build/badge.svg)
+![License](https://img.shields.io/github/license/Radioh/action-content-overwrite) ![Content Overwrite Actions Status](https://github.com/Radioh/action-content-overwrite/workflows/Build/badge.svg) ![Code coverage](/badges/coverage.svg)
 
 # Content overwrite
 
-This Github action will overwrite a file with defined content.
-It is useful during CI process when you need to replace all content in a config file or all content in other files.
-Content could be stored as a Github Secret.
+This action overwrites the content of a file with the content provided in the action.
+It is useful for updating files with secrets or other content that should not be stored in the repository.
+A common use case is to update a file with the content of a Github secret.
+
+# Inputs
+
+- `filePath` - The path to the file that should be updated
+- `content` - The content that should be written to the file
 
 # Usage
 

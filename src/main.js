@@ -10,10 +10,6 @@ async function run() {
     const filePath = core.getInput("filePath", { required: true });
     const content = core.getInput("content", { required: true });
 
-    if (!filePath || !content) {
-      throw new Error("filePath and content inputs are required");
-    }
-
     await fs.writeFile(filePath, content, { encoding: "utf8", flag: "w" });
     core.info(`Filled content into: ${filePath}`);
   } catch (error) {
