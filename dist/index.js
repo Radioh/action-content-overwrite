@@ -25635,6 +25635,35 @@ module.exports = {
 
 /***/ }),
 
+/***/ 7936:
+/***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
+
+const core = __nccwpck_require__(7484);
+const fs = (__nccwpck_require__(9896).promises);
+
+/**
+ * The main function for the action.
+ * @returns {Promise<void>} Resolves when the action is complete.
+ */
+async function run() {
+  try {
+    const filePath = core.getInput("filePath", { required: true });
+    const content = core.getInput("content", { required: true });
+
+    await fs.writeFile(filePath, content, { encoding: "utf8", flag: "w" });
+    core.info(`Filled content into: ${filePath}`);
+  } catch (error) {
+    core.setFailed(error.message);
+  }
+}
+
+module.exports = {
+  run,
+};
+
+
+/***/ }),
+
 /***/ 2613:
 /***/ ((module) => {
 
@@ -27539,24 +27568,10 @@ module.exports = parseParams
 /******/ 	
 /************************************************************************/
 var __webpack_exports__ = {};
-const core = __nccwpck_require__(7484);
-const fs = (__nccwpck_require__(9896).promises);
-
-async function run() {
-  try {
-    const filePath = core.getInput("filePath", { required: true });
-    const content = core.getInput("content", { required: true });
-
-    if (!filePath || !content) {
-      throw new Error("filePath and content inputs are required");
-    }
-
-    await fs.writeFile(filePath, content, { encoding: "utf8", flag: "w" });
-    console.log(`Filled content into: ${filePath}`);
-  } catch (error) {
-    core.setFailed(error.message);
-  }
-}
+/**
+ * The entrypoint for the action.
+ */
+const { run } = __nccwpck_require__(7936);
 
 run();
 
