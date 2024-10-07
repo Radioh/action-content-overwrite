@@ -16,7 +16,7 @@ A common use case is to update a file with the content of a Github secret.
 Example using content from a Github secret to overwrite content in test.txt
 
 ```yaml
-uses: Radioh/action-content-overwrite@v2
+uses: Radioh/action-content-overwrite@v2.0
 with:
   filePath: "./src/test.txt"
   content: ${{ secrets.TEST }}
