@@ -8,9 +8,8 @@ inputs:
     description: "The content which will overwrite defined file content"
     required: true
 runs:
-  using: "node12"
+  using: "node20"
   main: "dist/index.js"
 branding:
-  icon: 'file-text'  
-  color: 'green'
-  
+  icon: "file-text"
+  color: "green"

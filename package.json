@@ -1,10 +1,12 @@
 {
   "name": "action-content-overwrite",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "A github action for overwriting content in a predefined file. Useful for overwriting config and other files with content defined in a Github secret.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "package": "npx ncc build src/index.js -o dist --source-map --license licenses.txt",
+    "test": "npx jest",
+    "coverage": "npx make-coverage-badge --output-path ./badges/coverage.svg"
   },
   "repository": {
     "type": "git",
@@ -14,15 +16,49 @@
     "github",
     "actions",
     "secret",
-    "replace"
+    "replace",
+    "overwrite",
+    "content"
   ],
+  "engines": {
+    "node": ">=20"
+  },
   "author": "Jeppe Ærenlund",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/Radioh/action-content-overwrite/issues"
   },
   "homepage": "https://github.com/Radioh/action-content-overwrite#readme",
+  "jest": {
+    "verbose": true,
+    "clearMocks": true,
+    "testEnvironment": "node",
+    "moduleFileExtensions": [
+      "js"
+    ],
+    "testMatch": [
+      "**/*.test.js"
+    ],
+    "testPathIgnorePatterns": [
+      "/node_modules/",
+      "/dist/"
+    ],
+    "coverageReporters": [
+      "json-summary",
+      "text",
+      "lcov"
+    ],
+    "collectCoverage": true,
+    "collectCoverageFrom": [
+      "./src/**"
+    ]
+  },
   "dependencies": {
-    "@actions/core": "^1.2.6"
+    "@actions/core": "^1.11.1",
+    "make-coverage-badge": "^1.2.0"
+  },
+  "devDependencies": {
+    "@vercel/ncc": "^0.38.2",
+    "jest": "^29.7.0"
   }
 }
